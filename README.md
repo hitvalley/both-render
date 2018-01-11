@@ -55,4 +55,4 @@ npm start
 ```
 
 ## 结果
-[!image](https://github.com/hitvalley/both-render/blob/master/assets/static/imgs/result.png)
+![image](https://github.com/hitvalley/both-render/blob/master/assets/static/imgs/result.png)
