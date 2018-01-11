@@ -1,0 +1,25 @@
+{
+  "name": "both-render",
+  "version": "1.0.0",
+  "description": "render in server and browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hitvalley/both-render.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hitvalley/both-render/issues"
+  },
+  "homepage": "https://github.com/hitvalley/both-render#readme",
+  "dependencies": {
+    "valley-module": "^1.0.8",
+    "valley-server": "^1.0.14",
+    "valley-tpl": "^1.0.11"
+  }
+}
