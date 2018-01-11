@@ -53,3 +53,6 @@ npm start
 
 # 访问：http://localhost:8080
 ```
+
+## 结果
+[!image](https://github.com/hitvalley/both-render/blob/master/assets/static/imgs/result.png)
