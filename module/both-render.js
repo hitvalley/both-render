@@ -1,7 +1,7 @@
 const ValleyModule = require('valley-module');
 
 const reg = /<\/head>/;
-let scriptTpl = '<script src="/js/valleytpl.js"></script>';
+let scriptTpl = '<script src="http://source.valleyjs.org/valley-tpl.js"></script>';
 
 class BothRender extends ValleyModule {
   prepare() {
@@ -9,13 +9,13 @@ class BothRender extends ValleyModule {
       this.context.brender = async (tpl, data, scope) => {
         let html = await this.context.render(tpl, data, scope);
         if (reg.test(html)) {
-          html.replace(reg, `${scriptTpl}</body>`);
+          html = html.replace(reg, `${scriptTpl}</body>`);
         } else {
           html = scriptTpl + html;
         }
-        this.context.text(html);
+        await this.context.text(html);
       };
-    })
+    });
   }
 }
 
