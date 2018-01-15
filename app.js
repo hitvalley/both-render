@@ -20,8 +20,7 @@ server.use('router', require(path.join(__dirname, 'routers/main')));
 
 server.use('/', async function(next) {
   // console.log('404', this.context.req.url)
-  let res = this.context.response;
-  // console.log(res)
+  let res = this.context.res;
   if (res && res.state == 404) {
     this.context.text('404');
     await next();
