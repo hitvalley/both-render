@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/hitvalley/both-render#readme",
   "dependencies": {
-    "valley-module": "^1.0.8",
+    "valley-module": "^1.0.11",
     "valley-router": "^1.0.11",
     "valley-server": "^1.0.14",
     "valley-tpl": "^1.0.14"
