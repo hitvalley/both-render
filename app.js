@@ -4,6 +4,7 @@ const path = require('path');
 const ValleyServer = require('valley-server');
 const ValleyTpl = require('valley-tpl');
 const ValleyRouter = require('valley-router');
+const ValleyMongo = require('valley-mongo');
 
 const BothRender = require(path.join(__dirname, 'module/both-render'));
 
@@ -11,10 +12,12 @@ const server = new ValleyServer();
 const config = {
   port: 8080
 };
+const mongoConfig = require('./mongo-config.js');
 
 let viewPath = path.join(__dirname, 'assets/views');
-server.use('prepare-tpl', new ValleyTpl({ viewPath }));
 server.staticPath(path.join(__dirname, 'assets/static'));
+server.use('prepare-tpl', new ValleyTpl({ viewPath }));
+server.use('mongo', new ValleyMongo(mongoConfig));
 server.use('both-render', BothRender);
 server.use('router', require(path.join(__dirname, 'routers/main')));
 
@@ -27,4 +30,4 @@ server.use('/', async function(next) {
   }
 });
 
-server.listen(config.port).then(res => console.log(`http:\/\/localhost:${config.port}`));
+server.listen(config.port).then(res => console.log(`http:\/\/localhost:${config.port}/index`));
